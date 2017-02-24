@@ -49,7 +49,7 @@ public class AccountDaoImplTest {
         // account.setType(2);
         account.setCreateTime(new Date (System.currentTimeMillis()));
         account.setStatus(false);
-        account.setLatestLoginTime(new Date(System.currentTimeMillis()));
+        account.setLatestLoginTime(new Date( System.currentTimeMillis()));
         account.setName("123");
         account.setRemark("234");
         accountDao.addEntity(account);
