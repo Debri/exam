@@ -7,6 +7,7 @@
     <groupId>bjhetang</groupId>
     <artifactId>liu</artifactId>
     <version>1.0</version>
+    <packaging>war</packaging>
 
     <properties>
         <!--配置项目编码-->
@@ -38,7 +39,7 @@
             </resource>
         </resources>
         <plugins>
-            <!-- <plugin>
+             <plugin>
                  <groupId>org.mortbay.jetty</groupId>
                  <artifactId>maven-jetty-plugin</artifactId>
                  <version>6.1.7</version>
@@ -53,7 +54,7 @@
                      </webAppSourceDirectory>
                      <contextPath>/</contextPath>
                  </configuration>
-             </plugin>-->
+             </plugin>
             <!-- <plugin>
                  <groupId>org.codehaus.cargo</groupId>
                  <artifactId>cargo-maven2-plugin</artifactId>
@@ -192,6 +193,5 @@
             <version>2.8.3</version>
         </dependency>
     </dependencies>
-
 
 </project>

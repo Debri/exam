@@ -67,6 +67,5 @@
         <!--此处配置为.do而不是/*，否则会发生404-->
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
-
 </web-app>
         
