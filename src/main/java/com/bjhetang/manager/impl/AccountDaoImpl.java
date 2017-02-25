@@ -54,10 +54,32 @@ public class AccountDaoImpl implements AccountDao {
         return jdbcTemplate.update(sql, new Object[]{account.getName(), account.getRemark(), account.getStatus(), account.getCreateTime(), account.getLatestLoginTime(), account.getType()});
     }
 
-    public List<Account> SelectByPage(Page page) {
+    public List<Account> selectByPage(Page page) {
         List<Account> list = new ArrayList<Account>();
         String sql = "select * from account order by account_id ASC limit " + page.getPageNow() + "," + page.getPageSize();
         list = jdbcTemplate.query(sql, new AccountRowMapper());
         return list;
     }
+
+    public Integer selectIfExist(Integer id) {
+        String sql = "select count(account_id) from account";
+        return jdbcTemplate.queryForObject(sql, Integer.class);
+
+    }
+
+    public Integer lockAccount(Integer id) {
+        String sql = "update account set status=0 where account_id=" + id;
+        return jdbcTemplate.update(sql);
+    }
+
+    public Integer unlockAccount(Integer id) {
+        String sql = "update account set status=1 where account_id=" + id;
+        return jdbcTemplate.update(sql);
+    }
+
+    public boolean checkStatus(Integer id) {
+        String sql = "select status from account where account_id=" + id;
+        return jdbcTemplate.queryForObject(sql, Boolean.class);
+    }
+
 }

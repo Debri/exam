@@ -14,7 +14,7 @@ public class Account {
     int id;
     String name;
     String remark;      //备注
-    boolean status;
+    boolean status;       //账户状态，假如为true说明可以访问
     Date createTime;
     Date latestLoginTime;
     short type;

@@ -35,7 +35,7 @@ public class AccountDaoImplTest {
     @Test
     public void testSelectAll() throws Exception {
         List<Account> list = new ArrayList<Account>();
-        list = accountDao.SelectByPage(new Page(1));
+        list = accountDao.selectByPage(new Page(1));
         for (Account account : list) {
             System.out.println(account.getId());
         }
